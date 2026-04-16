@@ -10,7 +10,7 @@ export default function Footer() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/c8.jpg')" }}
       />
-      <div className="absolute inset-0 bg-gray-950/500" />
+      <div className="absolute inset-0 bg-gray-950/50" />
 
       <div className="relative z-10">
         <div className="max-w-7xl mx-auto px-6 sm:px-10 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
