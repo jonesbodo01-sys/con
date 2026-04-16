@@ -28,7 +28,7 @@ export default function Hero() {
         <h1 className="text-4xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-tight mb-4 max-w-2xl">
           ACHIMWENE<br />
           NEAT CONSTRUCTION<br />
-          <span className="text-red-500">GROUP</span>
+          <span className="text-white">GROUP</span>
         </h1>
 
         <p className="text-gray-200 text-lg sm:text-xl mb-8 font-light">
@@ -52,18 +52,6 @@ export default function Hero() {
           </a>
         </div>
 
-        <div className="mt-16 grid grid-cols-3 gap-6 max-w-lg">
-          {[
-            { value: '15+', label: 'Years Experience' },
-            { value: '200+', label: 'Projects Done' },
-            { value: '100%', label: 'Satisfaction' },
-          ].map(({ value, label }) => (
-            <div key={label} className="text-center">
-              <div className="text-3xl sm:text-4xl font-extrabold text-red-500">{value}</div>
-              <div className="text-gray-300 text-xs sm:text-sm mt-1">{label}</div>
-            </div>
-          ))}
-        </div>
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">

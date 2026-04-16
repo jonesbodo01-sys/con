@@ -1,46 +1,35 @@
 import { useEffect, useRef, useState } from 'react';
-import { HardHat, Shield, Handshake, Star, ClipboardCheck } from 'lucide-react';
 
 const features = [
   {
-    icon: HardHat,
+    image: '/images/feature-experienced.jpg',
     title: 'Experienced Professionals',
     description:
       'Our skilled team brings decades of hands-on construction expertise, ensuring every project is completed to the highest standard.',
-    color: 'text-yellow-400',
-    bg: 'bg-yellow-400/10',
   },
   {
-    icon: Shield,
+    image: '/images/feature-quality.jpg',
     title: 'Quality Workmanship',
     description:
       'We are committed to delivering outstanding build quality on every project — from small renovations to large commercial builds.',
-    color: 'text-green-400',
-    bg: 'bg-green-400/10',
   },
   {
-    icon: Handshake,
+    image: '/images/feature-reliable.jpg',
     title: 'Reliable & Trustworthy',
     description:
       'Dependability is at the core of everything we do. We show up, communicate clearly, and deliver on our promises every time.',
-    color: 'text-blue-400',
-    bg: 'bg-blue-400/10',
   },
   {
-    icon: Star,
+    image: '/images/feature-satisfaction.jpg',
     title: 'Customer Satisfaction',
     description:
       'Your satisfaction drives us. We work closely with clients from planning through completion to ensure expectations are exceeded.',
-    color: 'text-red-400',
-    bg: 'bg-red-400/10',
   },
   {
-    icon: ClipboardCheck,
+    image: '/images/feature-inspection.jpg',
     title: 'Inspection Utilities',
     description:
       'Rigorous quality checks and structured inspections are integrated throughout every phase of the construction process.',
-    color: 'text-orange-400',
-    bg: 'bg-orange-400/10',
   },
 ];
 
@@ -63,7 +52,7 @@ export default function WhyChooseUs() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/c2.jpg')" }}
       />
-      <div className="absolute inset-0 bg-gray-950/88" />
+      <div className="absolute inset-0 bg-gray-950/95" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10">
         <div
@@ -72,7 +61,7 @@ export default function WhyChooseUs() {
           }`}
         >
           <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4">
-            WHY CHOOSE <span className="text-red-500">US?</span>
+            WHY CHOOSE <span className="text-white">US?</span>
           </h2>
           <div className="flex justify-center gap-2 mt-3">
             <div className="h-1 w-12 bg-red-600 rounded-full" />
@@ -81,26 +70,33 @@ export default function WhyChooseUs() {
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-          {features.map((feature, idx) => {
-            const Icon = feature.icon;
-            return (
-              <div
-                key={feature.title}
-                className={`flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 ${
-                  visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-                }`}
-                style={{ transitionDelay: visible ? `${idx * 100}ms` : '0ms' }}
-              >
-                <div className={`${feature.bg} p-3 rounded-xl flex-shrink-0 h-fit`}>
-                  <Icon className={`w-7 h-7 ${feature.color}`} />
-                </div>
-                <div>
-                  <h3 className="text-white font-bold text-base mb-1.5">{feature.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{feature.description}</p>
+          {features.map((feature, idx) => (
+            <div
+              key={feature.title}
+              className={`flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 ${
+                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+              }`}
+              style={{ transitionDelay: visible ? `${idx * 100}ms` : '0ms' }}
+            >
+              <div className="flex-shrink-0 h-fit">
+                <div className="w-14 h-14 rounded-xl overflow-hidden bg-white/10 border border-white/20">
+                  <img
+                    src={feature.image}
+                    alt={feature.title}
+                    className="w-full h-full object-cover"
+                    onError={(e) => {
+                      (e.currentTarget as HTMLImageElement).style.display = 'none';
+                      (e.currentTarget.parentElement as HTMLElement).classList.add('flex', 'items-center', 'justify-center');
+                    }}
+                  />
                 </div>
               </div>
-            );
-          })}
+              <div>
+                <h3 className="text-white font-bold text-base mb-1.5">{feature.title}</h3>
+                <p className="text-white/80 text-sm leading-relaxed">{feature.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
 
         <div
