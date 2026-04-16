@@ -52,7 +52,7 @@ export default function WhyChooseUs() {
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/images/c2.jpg')" }}
       />
-      <div className="absolute inset-0 bg-gray-950/95" />
+      <div className="absolute inset-0 bg-gray-950/50" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-10">
         <div
