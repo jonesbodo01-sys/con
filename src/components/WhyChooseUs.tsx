@@ -74,7 +74,7 @@ export default function WhyChooseUs() {
             <div
               key={feature.title}
               className={`flex gap-4 p-6 rounded-2xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/20 transition-all duration-500 hover:-translate-y-1 ${
-                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+                visible ? 'opacity-50 translate-y-0' : 'opacity-0 translate-y-10'
               }`}
               style={{ transitionDelay: visible ? `${idx * 100}ms` : '0ms' }}
             >
